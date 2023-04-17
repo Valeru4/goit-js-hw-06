@@ -30,15 +30,24 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+// ingredients.forEach(ingredient => { 
+//   const itemEl = document.createElement('li')
+//   itemEl.textContent = ingredient;
+//   itemEl.classList.add('.item')
+//   navEl.appendChild(itemEl)
+// });
+
 
 const navEl = document.getElementById('ingredients')
 
-ingredients.forEach(ingredient => { 
+
+const ingredientNewArr = ingredients.map(ingredient => {
   const itemEl = document.createElement('li')
   itemEl.textContent = ingredient;
-  itemEl.classList.add('.item')
-  navEl.appendChild(itemEl)
+  itemEl.classList.add('.item');
+  return itemEl
+})
+navEl.append(...ingredientNewArr)
 
-});
 
 

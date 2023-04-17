@@ -13,9 +13,9 @@ const outputEl = document.getElementById('name-output')
 inputEl.addEventListener('input', onInputEntertext)
 
 function onInputEntertext() {
-    if (inputEl.value !== '') { outputEl.textContent = inputEl.value; }
+    if (inputEl.value.trim() !== '') { outputEl.textContent = inputEl.value; }
     else {
-        outputEl.textContent = outputEl.textContent;
+        outputEl.textContent = 'Anonymous';
     }
 }
 

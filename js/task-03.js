@@ -23,7 +23,6 @@
 // ];
 
 
-const navEl = document.querySelector('.gallery')
 
 
 const images = [
@@ -41,10 +40,28 @@ const images = [
   },
 ];
 
+const navEl = document.querySelector('.gallery')
 
-images.forEach(({url, alt}) => {
 
-  const itemEl = `<li class="item-gallery"><img class="image-gallery" src="${url}" alt="${alt}"</li>`
-  navEl.insertAdjacentHTML("beforeend", itemEl);
-});
+// images.map(({url, alt}) => {
+
+//   const itemEl = `<li class="item-gallery"><img class="image-gallery" src="${url}" alt="${alt}"</li>`
+//   navEl.insertAdjacentHTML("beforeend", itemEl);
+// });
+
+
+function createImgGallery(items) {
+  return items.map(({url, alt}) => {
+    return `<li class="item-gallery">
+    <img class="image-gallery" src="${url}" alt="${alt}"/>
+    </li>`;
+  }).join('');
+} 
+const newImages = createImgGallery(images);
+navEl.insertAdjacentHTML("beforeend", newImages);
+
+
+
+
+
 

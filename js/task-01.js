@@ -50,22 +50,31 @@
 // Category: Technologies
 // Elements: 5
 
+
+
 // const navEl = document.getElementById('categories')
 // const itemArrayEl = navEl.children
 // console.log(`Number of categories: ${itemArrayEl.length}`)
+// itemEl.forEach(item => {
+//   const itemName = item.firstElementChild;
+//   const totalItemEl = item.querySelectorAll('li');
+
+//     console.log(`Category: ${itemName.textContent}
+// Elements: ${totalItemEl.length}`);
+// });
 
 
+const navEl = document.getElementById('categories');
+const itemEl = [...navEl.children];
+console.log(`Number of categories: ${itemEl.length}`);
 
 
-const categoriesList = document.getElementById("categories");
-const itemEl = navEl.querySelectorAll(".item");
-
-
-itemEl.forEach(item => {
+itemEl.forEach((item) => {
   const itemName = item.firstElementChild;
-  const totalItemEl = item.querySelectorAll('li');
+  const totalItemEl = item.lastElementChild.children;
 
     console.log(`Category: ${itemName.textContent}
 Elements: ${totalItemEl.length}`);
 });
+
 
